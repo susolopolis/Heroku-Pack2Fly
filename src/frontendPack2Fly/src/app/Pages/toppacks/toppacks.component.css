@@ -1,0 +1,91 @@
+
+div.Pantalla {
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/29/06/20/blonde-1867768_1280.jpg");
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+}
+h1{
+  margin-left: 10%;
+  font-size: 60px;
+  font-family: 'Goblin One', cursive;
+  color: deepskyblue;
+}
+
+h2{
+  text-align: center;
+}
+
+p{
+  margin-top: 10px;
+  margin-left: 10%;
+  font-size: 20px;
+  width: 20%;
+  color: black;
+  font-family: 'Lato', sans-serif;
+}
+
+button{
+  margin-left: 10%;
+  width: 20%;
+  background-color: deepskyblue;
+  color: white;
+  font-family: 'Lato', sans-serif;
+
+}
+
+button:hover {
+  background-color:lightblue;
+  color: black;
+}
+
+.formulario{
+  position: relative;
+  width:80%;
+  margin: auto;
+}
+
+ul{
+  width:100%;
+  padding:16px;
+  border: 1px solid black;
+  border-radius:5px;
+  background: deepskyblue;
+  margin-top: 10px;
+}
+
+li{
+  position: center;
+  width:100%;
+}
+
+.column {
+  float: left;
+  margin-top: 20px;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  position: relative;
+  overflow:auto;
+  height:70%;
+}
+
+
+.column button{
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 10px;
+  width: 80%;
+  text-align: center;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: #0095dd;
+  background-size: cover;
+  color: white;
+}
+
+.column button:hover {
+  background-color:lightblue;
+}

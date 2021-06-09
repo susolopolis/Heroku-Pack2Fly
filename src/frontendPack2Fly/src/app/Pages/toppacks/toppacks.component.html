@@ -1,0 +1,19 @@
+
+<div class="Pantalla">
+  <div class="formulario">
+    <h1>Top</h1>
+    <h1>Packs</h1>
+    <p>Check those packs that users have saved the most!</p>
+    <button type="submit" (click)="get_top()">Check!</button>
+  </div>
+
+  <div class="column menu">
+    <h2 *ngIf=check_packs()>Results</h2>
+    <ul class="list-group" *ngFor="let pack of packs; let i = index">
+      <li class="list-group-item">Transport: {{pack.transport}} </li>
+      <li class="list-group-item">Acommodation: {{pack.accomodation}}</li>
+      <li class="list-group-item">Activities: {{pack.activities}}</li>
+    </ul>
+  </div>
+</div>
+

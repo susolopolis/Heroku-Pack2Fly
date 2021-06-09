@@ -1,0 +1,55 @@
+<div class="Pantalla">
+  <div class="formulario">
+    <form class="form-inline" [formGroup]="SearchForm">
+      <input type="text" id="Origin"  placeholder="Enter Origin" formControlName="Origin">
+      <input type="text" id="Destiny" placeholder="Enter Destination" formControlName="Destiny">
+      <input type="date" id="CheckIn" placeholder="Enter Check-In Date" formControlName="CheckIn">
+      <input type="date" id="Checkout" placeholder="Enter Check-Out Date" formControlName="Checkout">
+      <input type="number" id="people" placeholder="Enter Number of People" formControlName="people">
+      <button type="submit" (click)="getPacks()">Go!</button>
+    </form>
+  </div>
+
+  <div *ngIf=check_packs() class="column menu">
+    <h1>Results</h1>
+
+      <button type="submit" (click)="sort_price()">Search by Cheaper</button>
+      <button type="submit" (click)="sort_price_puntuation()">Search by Quality-Price</button>
+      <button type="submit" (click)="sort_price_expensive()">Search by More Expensive</button>
+      <button type="submit" (click)="sort_puntuation()">Search by Better Puntuation</button>
+
+
+     <ul class="list-group" *ngFor="let pack of packs; let i = index">
+       <li class="list-group-item">Flight {{pack.flight.Airline}}, {{pack.flight.LandMarkName_Origin}} - {{pack.flight.LandMarkName_Destination}} for {{pack.flight.minPrice}} Dolars </li>
+       <li class="list-group-item">Stay at {{pack.hotel.name}}, with {{pack.hotel.Star_rating}} / {{pack.hotel.scale}} Stars</li>
+       <li class="list-group-item">
+         <p *ngFor="let places of pack.places; let j = index">Visit {{places.name}}</p>
+       </li>
+       <li class="list-group-item">For just {{pack.price}} € !</li>
+       <button type="submit" (click)="seePackInfo(i)">Check Pack</button>
+       <button type="submit" (click)="save_pack(i)">Save Pack</button>
+
+       <ul *ngIf=check_info(i)>
+         <h2>Pack Info</h2>
+         <li class="list-group-item"> Flight Airline: {{pack.flight.Airline}}</li>
+         <li class="list-group-item"> Destination City: {{pack.flight.City_Destination}}</li>
+         <li class="list-group-item"> Destination Country: {{pack.flight.Country_Destination}}</li>
+         <li class="list-group-item"> Origin City: {{pack.flight.City_Origin}}</li>
+         <li class="list-group-item"> Origin Country: {{pack.flight.Country_Origin}}</li>
+         <li class="list-group-item"> Departure Date: {{pack.flight.DepatureDate}}</li>
+         <li class="list-group-item"> Flight Price: {{pack.flight.minPrice}}</li>
+         <p></p>
+         <li class="list-group-item"> Hotel Name: {{pack.hotel.name}}</li>
+         <li class="list-group-item"> Hotel Rating: {{pack.hotel.Star_rating}} / {{pack.hotel.scale}} </li>
+         <li class="list-group-item"> Hotel Address: {{pack.hotel.address}}</li>
+         <li class="list-group-item"> Guest Rating: {{pack.hotel.guest_rating}}</li>
+         <li class="list-group-item"> Hotel Price: {{pack.hotel.current_price}}</li>
+         <p></p>
+         <li class="list-group-item">
+           <p *ngFor="let places of pack.places; let j = index"> Place Name: {{places.name}}, Latitude: {{places.latitude}}, Longitude: {{places.longitude}}</p>
+         </li>
+         {{reset_info(i)}}
+       </ul>
+     </ul>
+  </div>
+</div>

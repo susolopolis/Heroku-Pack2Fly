@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {box-sizing: border-box}
+    body {font-family: Verdana, sans-serif; margin:0}
+
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    button.recommended{
+      display:block;
+      width: 50%;
+      height: 40px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid black;
+      background: #0095dd;
+      background-size: cover;
+      color: black;
+      border-radius:5px;
+    }
+
+    div.fondo1 {
+      text-align:center;
+      margin-left:10%;
+      margin-right:10%;
+      vertical-align: middle;
+      background-image: url("https://cdn.pixabay.com/photo/2016/10/01/21/00/beach-1708366_960_720.jpg");
+      background-size: cover;
+      float: left;
+      border-radius:5px;
+      border: 1px solid black;
+      width: 80%;
+      height: 200px;
+    }
+
+    div.fondo2 {
+
+      background-image: url("https://cdn.pixabay.com/photo/2015/03/26/10/30/landscape-691457__340.jpg");
+      text-align:center;
+      margin-left:10%;
+      margin-right:10%;
+      vertical-align: middle;
+      background-size: cover;
+      float: left;
+      border-radius:5px;
+      border: 1px solid black;
+      width: 80%;
+      height: 200px;
+    }
+
+    div.fondo3 {
+      background-image: url("https://cdn.pixabay.com/photo/2013/02/21/19/08/background-84604_1280.jpg");
+      text-align:center;
+      margin-left:10%;
+      margin-right:10%;
+      vertical-align: middle;
+      background-size: cover;
+      float: left;
+      border-radius:5px;
+      border: 1px solid black;
+      width: 80%;
+      height: 200px;
+    }
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="fondo1">
+      <h2 class = "texto-intro">
+        Recommended Packs
+      </h2>
+      <p class = cuadropres>
+        Looking for some inspiration? Just check what other users usually pick. Maybe you can find your next experience.
+      </p>
+
+      <button class="recommended" routerLink="">Check!</button>
+    </div>
+  </div>
+
+
+
+  <div class="mySlides fade">
+    <div class="fondo2">
+      <h2 class = "texto-intro">
+        Top Packs
+      </h2>
+      <p class = cuadropres>
+        If you don´t know what to pick, just check what packs are the top ones selected by the users.
+      </p>
+
+      <button class="recommended" routerLink="">Check!</button>
+    </div>
+  </div>
+
+
+
+  <div class="mySlides fade">
+    <div class="fondo3">
+      <h2 class = "texto-intro">
+        Based on Your Likes
+      </h2>
+      <p class = cuadropres>
+        These packs are just based on packs you have saved. Check them to see if you also like these!
+      </p>
+      <button class="recommended" routerLink="">Check!</button>
+    </div>
+  </div>
+
+
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+

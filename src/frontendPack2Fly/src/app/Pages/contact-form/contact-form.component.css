@@ -1,0 +1,100 @@
+
+
+h2{
+  font-size: 60px;
+  font-family: 'Goblin One', cursive;
+  color: deepskyblue;
+}
+div.pantalla{
+  height: 100%;
+  width: 100%;
+  background-image: url("https://cdn.pixabay.com/photo/2015/07/29/12/07/hot-air-balloon-865817_1280.jpg");
+  background-size: cover;
+}
+
+p {
+  font-family: 'Brush Script MT', cursive;
+}
+
+img{
+  float: left;
+  width: 25%;
+  margin-right: 20px;
+}
+
+div.imagenes{
+  display: flex;
+  justify-content: center;
+}
+div.other-option{
+  float: left;
+  width: 45%;
+  margin-top: 10%;
+  margin-left: 10%;
+  height: 50%;
+
+}
+
+form{
+  float: left;
+  width:35%;
+  height: 40%;
+  padding:16px;
+  border: 1px solid black;
+  border-radius:5px;
+  margin-left: 5%;
+  margin-top: 10%;
+  margin-bottom: 40px;
+  background-color: deepskyblue;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form-contact label{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10px;
+}
+.form-contact input {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.form-contact textarea{
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+
+.form-contact button {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  width: 90%;
+  text-align: center;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: #0095dd;
+  background-size: cover;
+  color: white;
+}
+
+
+.form-contact button:hover {
+  background-color:lightblue;
+  color: black;
+}
+
+@media (max-width: 800px) {
+
+  .form-contact {
+    width: 90%;
+  }
+
+  div.other-option {
+    margin-left: 5%;
+    width: 90%;
+  }
+}

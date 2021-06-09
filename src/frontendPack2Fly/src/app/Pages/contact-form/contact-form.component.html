@@ -1,0 +1,21 @@
+
+
+<div class="pantalla">
+  <div class="other-option">
+    <h2>Contact Us!</h2>
+    <p>If you have any doubt, don´t hesitage and use the form on the right to send us a message. Our team will help you with
+    any question you could have. We are always active!</p><br>
+    <p>You can also contact us through our social media. Just check the footer below to see all the options available. </p><br>
+  </div>
+
+<form class="form-contact" [formGroup]="ContactForm">
+  <label for="from">Your Email</label><br>
+  <input type="text" id="from"  name="from" formControlName="from"><br>
+  <label for="title">Title</label><br>
+  <input type="text" id="title"  name="title" formControlName="title"><br>
+  <label for="message">Message</label><br>
+  <textarea id="message" formControlName="message"></textarea><br>
+  <button type="submit" (click)="sendEmail()">Send</button>
+</form>
+
+</div>

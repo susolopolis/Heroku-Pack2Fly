@@ -1,0 +1,26 @@
+
+<div class="topnav" id="myTopnav">
+  <a mat-list-item routerLink="/search-form">Home</a>
+  <a mat-list-item routerLink="/about-us">About Us</a>
+  <a mat-list-item routerLink="/contact-form">Contact</a>
+  <a mat-list-item routerLink="/recommended-packs">Recommended Packs</a>
+  <a mat-list-item routerLink="/top-packs">Top Packs</a>
+  <a mat-list-item routerLink="/user-identify">My Account</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+

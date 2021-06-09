@@ -1,0 +1,107 @@
+div.Pantalla {
+  background-image: url("https://cdn.pixabay.com/photo/2015/07/11/23/02/plane-841441_1280.jpg");
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+}
+
+
+h1{
+  text-align: center;
+}
+
+.formulario{
+  position: relative;
+  width:80%;
+  margin: auto;
+}
+
+form{
+  display: block;
+  width:100%;
+  padding:16px;
+  border: 1px solid black;
+  border-radius:5px;
+  background: deepskyblue;
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+/* Add some margins for each label */
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+/* Style the input fields */
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* Style the submit button */
+.form-inline button {
+  width: 10%;
+  text-align: center;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: #0095dd;
+  background-size: cover;
+  color: white;
+}
+
+.form-inline button:hover {
+  background-color:lightblue;
+}
+
+
+ul{
+  width:100%;
+  padding:16px;
+  border: 1px solid black;
+  border-radius:5px;
+  background: deepskyblue;
+  margin-top: 10px;
+}
+
+li{
+  position: center;
+  width:100%;
+}
+
+.column {
+  float: left;
+  margin-top: 20px;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  position: relative;
+  overflow:auto;
+  height:80%;
+}
+
+.column button{
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 10px;
+  width: 80%;
+  text-align: center;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: #0095dd;
+  background-size: cover;
+  color: white;
+}
+
+.column button:hover {
+  background-color:lightblue;
+}
+
