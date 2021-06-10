@@ -44,7 +44,6 @@ app.post('/save_pack', async (req,res) => {
     let result = await save_pack(Pack);
     res.send(result)
     return res;
-
 })
 
 app.get('/send_email',async (req,res) => {

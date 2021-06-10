@@ -37,13 +37,13 @@
          <li class="list-group-item"> Origin City: {{pack.flight.City_Origin}}</li>
          <li class="list-group-item"> Origin Country: {{pack.flight.Country_Origin}}</li>
          <li class="list-group-item"> Departure Date: {{pack.flight.DepatureDate}}</li>
-         <li class="list-group-item"> Flight Price: {{pack.flight.minPrice}}</li>
+         <li class="list-group-item"> Flight Price: {{"$"+pack.flight.minPrice + " each " }}</li>
          <p></p>
          <li class="list-group-item"> Hotel Name: {{pack.hotel.name}}</li>
          <li class="list-group-item"> Hotel Rating: {{pack.hotel.Star_rating}} / {{pack.hotel.scale}} </li>
          <li class="list-group-item"> Hotel Address: {{pack.hotel.address}}</li>
          <li class="list-group-item"> Guest Rating: {{pack.hotel.guest_rating}}</li>
-         <li class="list-group-item"> Hotel Price: {{pack.hotel.current_price}}</li>
+         <li class="list-group-item"> Hotel Price: {{pack.hotel.current_price + " each "}}</li>
          <p></p>
          <li class="list-group-item">
            <p *ngFor="let places of pack.places; let j = index"> Place Name: {{places.name}}, Latitude: {{places.latitude}}, Longitude: {{places.longitude}}</p>

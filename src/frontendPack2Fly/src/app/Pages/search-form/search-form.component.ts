@@ -59,12 +59,11 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-  async save_pack(index: any): Promise<void>{
-    await this.usuarioService.save_pack(this.packs[index])
-      .then((res: any) => {
-        alert(res);
-      })
-      .catch(err => alert(err));
+  save_pack(index: any) {
+    this.usuarioService.save_pack(this.packs[index])
+      .subscribe(resp => {
+        alert(resp);
+      });
   }
 
   seePackInfo(index: any): void{

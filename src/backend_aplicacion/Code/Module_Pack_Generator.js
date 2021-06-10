@@ -88,12 +88,13 @@ function calculate_total_price(hotel){
     var price;
     var aux="";
     for(var i=0;i<hotel.current_price.length;i++){
-        if(hotel.current_price[i]!="$"){
+        if((hotel.current_price[i]!="$")&&(hotel.current_price[i]!=",")){
             aux += hotel.current_price[i];
         }
     }
     price = parseInt(aux);
     price += flight.minPrice;
+    price = price * adults;
     return price.toString();
 }
 
