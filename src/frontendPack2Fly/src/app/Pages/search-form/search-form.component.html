@@ -6,20 +6,23 @@
       <input type="date" id="CheckIn" placeholder="Enter Check-In Date" formControlName="CheckIn">
       <input type="date" id="Checkout" placeholder="Enter Check-Out Date" formControlName="Checkout">
       <input type="number" id="people" placeholder="Enter Number of People" formControlName="people">
-      <button type="submit" (click)="getPacks()">Go!</button>
+      <button type="submit" class="btn btn-white btn-animate" (click)="getPacks();initiate_loading()">Go!</button>
     </form>
+  </div>
+
+  <div class="Loader" *ngIf=get_loading()>
+    <img class="loading" src="https://media.giphy.com/media/d5klXdfGnQBIQ9P1sp/giphy.gif" width="40%">
   </div>
 
   <div *ngIf=check_packs() class="column menu">
     <h1>Results</h1>
 
-      <button type="submit" (click)="sort_price()">Search by Cheaper</button>
-      <button type="submit" (click)="sort_price_puntuation()">Search by Quality-Price</button>
-      <button type="submit" (click)="sort_price_expensive()">Search by More Expensive</button>
-      <button type="submit" (click)="sort_puntuation()">Search by Better Puntuation</button>
-
-
+      <button class="btn btn-white btn-animate" type="submit" (click)="sort_price()">Search by Cheaper</button>
+      <button  class="btn btn-white btn-animate" type="submit" (click)="sort_price_puntuation()">Search by Quality-Price</button>
+      <button  class="btn btn-white btn-animate" type="submit" (click)="sort_price_expensive()">Search by More Expensive</button>
+      <button  class="btn btn-white btn-animate" type="submit" (click)="sort_puntuation()">Search by Better Puntuation</button>
      <ul class="list-group" *ngFor="let pack of packs; let i = index">
+        {{hide_loading()}}
        <li class="list-group-item">Flight {{pack.flight.Airline}}, {{pack.flight.LandMarkName_Origin}} - {{pack.flight.LandMarkName_Destination}} for {{pack.flight.minPrice}} Dolars </li>
        <li class="list-group-item">Stay at {{pack.hotel.name}}, with {{pack.hotel.Star_rating}} / {{pack.hotel.scale}} Stars</li>
        <li class="list-group-item">

@@ -52,9 +52,10 @@ export class UsuariosService {
     });
   }
 
-  save_pack(Pack: any): Observable<any> {
-    console.log(Pack);
-    return this.http.post("http://localhost:8000/save_pack",Pack);
+  save_pack(Pack: any){
+    return this.http
+      .post("http://localhost:8000/save_pack",Pack)
+      .toPromise()
   }
 
   send_gmail(From: string,Title: string, Message: string){

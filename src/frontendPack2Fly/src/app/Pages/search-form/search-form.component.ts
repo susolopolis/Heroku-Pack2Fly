@@ -21,6 +21,7 @@ export class SearchFormComponent implements OnInit {
   SearchForm: FormGroup;
 
   see_info: boolean[] = [false];
+  set_loading: boolean = false;
 
   constructor(public usuarioService: UsuariosService,private fb: FormBuilder) {
     this.Origin = new FormControl('', [Validators.required])
@@ -59,12 +60,15 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-  save_pack(index: any) {
-    this.usuarioService.save_pack(this.packs[index])
-      .subscribe(resp => {
-        alert(resp);
-      });
+  async save_pack(index: any){
+    await this.usuarioService.save_pack(this.packs[index])
+      .then((data) => {
+        console.log(JSON.stringify(data));
+      })
+      .catch(err => alert(err));
   }
+
+
 
   seePackInfo(index: any): void{
     this.see_info[index]=true;
@@ -74,6 +78,17 @@ export class SearchFormComponent implements OnInit {
   }
   reset_info(index: any): void{
     this.see_info[index]=false;
+  }
+
+  initiate_loading() : void{
+    this.set_loading=true;
+  }
+
+  get_loading() : boolean{
+    return this.set_loading;
+  }
+  hide_loading() : void{
+    this.set_loading=false;
   }
 
   sort_price(): void {

@@ -35,7 +35,7 @@ function initiate_ids(place){
         "port": null,
         "path": get_place(),
         "headers": {
-            "x-rapidapi-key": "f1437027d0msh29390ccc3de5e5ep17f081jsndb3b1a2bd225",
+            "x-rapidapi-key":  "f8c651997amsh404363d19719274p10d9abjsn4e754b6ac505",
             "x-rapidapi-host": "hotels-com-provider.p.rapidapi.com",
             "useQueryString": true
         }
@@ -161,7 +161,7 @@ function initiate_hotel(adults,ci,co,dest_id,sort_order){
         "port": null,
         "path": get_place(),
         "headers": {
-            "x-rapidapi-key": "f1437027d0msh29390ccc3de5e5ep17f081jsndb3b1a2bd225",
+            "x-rapidapi-key": "f8c651997amsh404363d19719274p10d9abjsn4e754b6ac505",
             "x-rapidapi-host": "hotels-com-provider.p.rapidapi.com",
             "useQueryString": true
         }
