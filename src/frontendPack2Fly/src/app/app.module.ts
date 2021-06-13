@@ -23,6 +23,8 @@ import { RecommendedpacksComponent } from './Pages/recommendedpacks/recommendedp
 import { ToppacksComponent } from './Pages/toppacks/toppacks.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { UserIdentityComponent } from './Pages/user-identity/user-identity.component';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider,FacebookLoginProvider } from 'angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -51,9 +53,27 @@ import { UserIdentityComponent } from './Pages/user-identity/user-identity.compo
         RouterModule.forRoot([]),
         NgbModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        SocialLoginModule
     ],
-  providers: [],
+  providers: [    {
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider('1202587633558469')
+        },
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '537690916532-0aja9rgct04g41c3lmq9ccpcec4afu79.apps.googleusercontent.com'
+          )
+        }
+      ]
+    } as SocialAuthServiceConfig,
+  } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
