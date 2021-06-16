@@ -2,11 +2,17 @@
 TFG Made by Jesús Navarro Hernández, last year student of Computer Engineering Degree at University of La Laguna. This project has been made using angular, node.js, CSS, Typescript, HTML and Javascript. You can check this technologies at their official websites, available here:
 
 https://angular.io
+
 https://nodejs.org/es/
+
 https://developer.mozilla.org/es/docs/Web/CSS
+
 https://www.typescriptlang.org
+
 https://developer.mozilla.org/es/docs/Web/HTML
+
 https://developer.mozilla.org/es/docs/Web/JavaScript
+
 
 
 All the elements used are under creative commons licencies and those that aren´t are used only with educational purpases, so they are covered. The use of the code or/and the information of the project is free. For more information, you can contact pack2flycustomer@gmail.com
