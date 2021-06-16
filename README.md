@@ -35,10 +35,11 @@ Then enter the round trip dates and the number of travelers. To perform the
 search, tap search.
 
 Once done, the results obtained will be displayed. Here you have 2 options:
-Save the Package: The package will be saved in the system, so that it will be offered
+
+- Save the Package: The package will be saved in the system, so that it will be offered
 in future searches.
 
-.Check the Package: It will show all the information of the package in detail.
+- Check the Package: It will show all the information of the package in detail.
 
 
 Additionally, there are filters to sort the results. You can select
