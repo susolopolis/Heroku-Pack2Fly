@@ -1,3 +1,6 @@
+
+<div class="Pantalla">
+
 <div class="container" style="max-width: 550px">
   <div *ngIf="isLoggedin === false">
     <h1 class="text-center mb-5">Log In Now!</h1>
@@ -9,6 +12,7 @@
 
   <div *ngIf="isLoggedin === true">
     <h2 class="text-center mb-5">Welcome Back, {{socialUser.firstName}}</h2>
+    <img class="imagen" src="{{socialUser.photoUrl}}">
     <div class="form-group">
       <label>First Name</label>
       <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
@@ -21,7 +25,7 @@
       <label>Email</label>
       <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
     </div>
-    <img class="imagen" src="{{socialUser.photoUrl}}">
     <button type="button" class="btn btn-white btn-animate" (click)="logOut()" class="btn btn-primary">Log Out</button>
   </div>
+</div>
 </div>

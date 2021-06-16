@@ -48,7 +48,10 @@ export class SearchFormComponent implements OnInit {
        this.packs = res;
        console.log(this.packs);
      })
-     .catch(err => console.error(err));
+     .catch(err => {
+       console.error(err)
+       alert("Something went wrong! Make sure that the information is correct.")
+     });
   }
 
   check_packs(): boolean{

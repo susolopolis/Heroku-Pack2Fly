@@ -1,11 +1,11 @@
 <div class="Pantalla">
   <div class="formulario">
     <form class="form-inline" [formGroup]="SearchForm">
-      <input type="text" id="Origin"  placeholder="Enter Origin" formControlName="Origin">
-      <input type="text" id="Destiny" placeholder="Enter Destination" formControlName="Destiny">
-      <input type="date" id="CheckIn" placeholder="Enter Check-In Date" formControlName="CheckIn">
-      <input type="date" id="Checkout" placeholder="Enter Check-Out Date" formControlName="Checkout">
-      <input type="number" id="people" placeholder="Enter Number of People" formControlName="people">
+      <input type="text" id="Origin"  placeholder="Enter Origin" formControlName="Origin" required>
+      <input type="text" id="Destiny" placeholder="Enter Destination" formControlName="Destiny" required>
+      <input type="date" id="CheckIn" placeholder="Enter Check-In Date" formControlName="CheckIn" required>
+      <input type="date" id="Checkout" placeholder="Enter Check-Out Date" formControlName="Checkout" required>
+      <input type="number" id="people" placeholder="Enter Number of People" formControlName="people" required>
       <button type="submit" class="btn btn-white btn-animate" (click)="getPacks();initiate_loading()">Go!</button>
     </form>
   </div>

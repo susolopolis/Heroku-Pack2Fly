@@ -16,7 +16,7 @@ export class ContactFormComponent implements OnInit {
   message: FormControl;
 
   constructor(public usuarioService: UsuariosService,private fb: FormBuilder) {
-    this.from = new FormControl('', [Validators.required])
+    this.from = new FormControl('', [Validators.required,Validators.email])
     this.title = new FormControl('', [Validators.required])
     this.message = new FormControl('', [Validators.required])
 
@@ -33,9 +33,12 @@ export class ContactFormComponent implements OnInit {
   async sendEmail():  Promise<void>{
     await this.usuarioService.send_gmail(this.ContactForm.get('from')?.value,this.ContactForm.get('title')?.value,this.ContactForm.get('message')?.value)
     .then((res: any) => {
-        console.log("Message send")
+        alert("Message send!")
     })
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.error(err)
+        alert("Something went wrong! Make sure that your email is correct.")
+      });
   }
 
 }

@@ -38,7 +38,7 @@ div.other-option{
 form{
   float: left;
   width:35%;
-  height: 40%;
+  height: auto;
   padding:16px;
   border: 1px solid black;
   border-radius:5px;
@@ -56,6 +56,13 @@ form{
   margin-bottom: 10px;
 }
 .form-contact input {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.form-contact div{
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 10px;

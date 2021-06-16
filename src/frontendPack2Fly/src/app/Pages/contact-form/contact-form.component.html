@@ -10,11 +10,36 @@
 
 <form class="form-contact" [formGroup]="ContactForm">
   <label for="from">Your Email</label><br>
-  <input type="text" id="from"  name="from" formControlName="from"><br>
+  <input type="email" id="from"  name="from" formControlName="from"><br>
+
+  <div *ngIf="from.invalid && (from.dirty || from.touched)"
+       class="alert alert-danger">
+    <div class="error" *ngIf="from.errors?.required">
+      Your email is required.
+    </div>
+
+    <div class="error" *ngIf="from.invalid">
+      Email is not valid.
+    </div>
+  </div>
+
   <label for="title">Title</label><br>
   <input type="text" id="title"  name="title" formControlName="title"><br>
+  <div *ngIf="title.invalid && (title.dirty || title.touched)"
+       class="alert alert-danger">
+    <div class="error" *ngIf="title.errors?.required">
+      Title is required.
+    </div>
+  </div>
+
   <label for="message">Message</label><br>
   <textarea id="message" formControlName="message"></textarea><br>
+  <div *ngIf="message.invalid && (message.dirty || message.touched)"
+       class="alert alert-danger">
+    <div class="error" *ngIf="message.errors?.required">
+      Message is required.
+    </div>
+  </div>
   <button class="btn btn-white btn-animate" type="submit" (click)="sendEmail()">Send</button>
 </form>
 
