@@ -110,7 +110,11 @@ exports.main = async (Origin,Destiny,checkin,checkout,people) =>{
     check_out_date = checkout;
     adults = parseInt(people);
 
-    await get_module_acco_acti_info();
+    try {
+        await get_module_acco_acti_info();
+    }catch (e){
+        return e;
+    }
     return packs;
 }
 

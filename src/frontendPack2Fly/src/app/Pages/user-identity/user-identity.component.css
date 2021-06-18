@@ -23,6 +23,16 @@ h2{
   text-align:center
 }
 
+.info button{
+  width: 100%;
+}
+
+.imagen{
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 10px;
+}
 
 .loginBtn {
   box-sizing: border-box;

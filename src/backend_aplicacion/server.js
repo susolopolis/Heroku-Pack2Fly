@@ -37,7 +37,7 @@ app.get('/packs',async (req, res) => {
 })
 
 app.post('/save_pack', async (req,res) => {
-    console.log("Elementos de la respuesta: " + req.body)
+    console.log("Elementos de la respuesta: " + req)
     //const Pack = req.body.Pack;
 
     let result = await save_pack(Pack);

@@ -224,6 +224,8 @@ exports.save_pack = async (pack) =>{
         save_accomodation(pack.hotel)
         save_activity(pack.places)
 
+        //Es posible que para el usuario, se le pase el correo electronico y se le asociara el indice del paquete recien guardado
+
         return true;
     }catch (error){
         console.log("ERROR en Modulo_Tablas: " + error);

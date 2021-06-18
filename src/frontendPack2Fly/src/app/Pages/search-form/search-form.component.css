@@ -48,6 +48,16 @@ form{
   align-items: center;
 }
 
+.botones-ordenacion{
+  width:100%;
+  padding:16px;
+  align-items: center;
+}
+
+.boton-orde{
+  display: inline-block;
+  width: 25%;
+}
 /* Add some margins for each label */
 .form-inline label {
   margin: 5px 10px 5px 0;
@@ -62,6 +72,9 @@ form{
   border: 1px solid #ddd;
 }
 
+.formulario{
+  text-align: center;
+}
 /* Style the submit button */
 .form-inline button {
   width: 10%;
@@ -144,6 +157,10 @@ li{
   background-color: #fff;
   color: #777;
 }
+.btn-red{
+  background-color: red;
+  color: #777777;
+}
 
 .btn::after {
   content: "";
@@ -160,6 +177,10 @@ li{
 
 .btn-white::after {
   background-color: #fff;
+}
+
+.btn-red::after{
+  background-color: red;
 }
 
 .btn:hover::after {
