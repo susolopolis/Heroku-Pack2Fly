@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UsuariosService} from "../../Services/usuarios.service";
-import { FormControl, FormGroup, FormBuilder, Validator, Validators,ReactiveFormsModule } from "@angular/forms";
+import { FormControl, FormGroup, FormBuilder, Validator, Validators, ReactiveFormsModule } from "@angular/forms";
 
 
 @Component({
