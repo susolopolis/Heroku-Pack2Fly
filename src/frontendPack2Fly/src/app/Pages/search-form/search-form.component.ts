@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UsuariosService} from "../../Services/usuarios.service";
-import { FormControl, FormGroup, FormBuilder, Validator, Validators, ReactiveFormsModule } from "@angular/forms";
+import { FormControl, FormGroup, FormBuilder, Validator, Validators,ReactiveFormsModule } from "@angular/forms";
 
 
 @Component({
@@ -74,12 +74,7 @@ export class SearchFormComponent implements OnInit {
   }
 
   check_packs(): boolean{
-    if(this.packs.length != 0){
-      return true;
-    }
-    else{
-      return false;
-    }
+    return this.packs.length != 0;
   }
 
   async save_pack(index: any){
@@ -93,7 +88,7 @@ export class SearchFormComponent implements OnInit {
 
 
   seePackInfo(index: any): void{
-    this.see_info[index]=true;
+    this.see_info[index] = !this.see_info[index];
   }
   check_info(index: any): boolean{
     return this.see_info[index];
@@ -140,7 +135,7 @@ export class SearchFormComponent implements OnInit {
   }
 
   check_filter(): void{
-    this.check_filters = true;
+    this.check_filters = !this.check_filters;
   }
 
   get_filter(): boolean{

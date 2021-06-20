@@ -55,21 +55,23 @@
        <button class="btn btn-white btn-animate" type="submit" (click)="save_pack(i)">Save Pack</button>
 
        <ul *ngIf=check_info(i)>
-         <h2>Pack Info</h2>
+         <h2>Flight Information</h2>
          <li class="list-group-item"> Flight Airline: {{pack.flight.Airline}}</li>
-         <li class="list-group-item"> Destination City: {{pack.flight.City_Destination}}</li>
+         <li class="list-group-item"> Destination Place: {{pack.flight.City_Destination}}</li>
          <li class="list-group-item"> Destination Country: {{pack.flight.Country_Destination}}</li>
-         <li class="list-group-item"> Origin City: {{pack.flight.City_Origin}}</li>
+         <li class="list-group-item"> Origin Place: {{pack.flight.City_Origin}}</li>
          <li class="list-group-item"> Origin Country: {{pack.flight.Country_Origin}}</li>
-         <li class="list-group-item"> Departure Date: {{pack.flight.DepatureDate}}</li>
+         <li class="list-group-item"> Departure Date: {{pack.flight.DepartureDate}}</li>
          <li class="list-group-item"> Flight Price: {{"$"+pack.flight.minPrice + " each " }}</li>
          <p></p>
+         <h2>Hotel Information</h2>
          <li class="list-group-item"> Hotel Name: {{pack.hotel.name}}</li>
          <li class="list-group-item"> Hotel Rating: {{pack.hotel.Star_rating}} / {{pack.hotel.scale}} </li>
          <li class="list-group-item"> Hotel Address: {{pack.hotel.address}}</li>
          <li class="list-group-item"> Guest Rating: {{pack.hotel.guest_rating}}</li>
          <li class="list-group-item"> Hotel Price: {{pack.hotel.current_price + " each "}}</li>
          <p></p>
+         <h2>Activities Information</h2>
          <li class="list-group-item">
            <p *ngFor="let places of pack.places; let j = index"> Place Name: {{places.name}}, Latitude: {{places.latitude}}, Longitude: {{places.longitude}}</p>
          </li>

@@ -173,7 +173,6 @@ initiate_tra = (id_origin,id_destiny,check_in,check_out) => {
         }catch (error){
             throw error;
         }
-
         return path += id_origin + "/" + id_destiny + "/" + ci + "?" + "inboundpartialdate=" + co;
     }
     /**
@@ -194,6 +193,8 @@ initiate_tra = (id_origin,id_destiny,check_in,check_out) => {
                     res.on("end", function () {
                         const body = Buffer.concat(chunks);
                         resultado = JSON.parse(body);
+                        console.log(resultado);
+                        console.log(resultado.Quotes);
                         resolve(get_transport_info());
                     });
                 });
@@ -209,17 +210,30 @@ initiate_tra = (id_origin,id_destiny,check_in,check_out) => {
      * @return transport Copia del valor de la variable transport.
      */
 
+
     function get_transport_info(){
+
         transport.minPrice = resultado.Quotes[0].MinPrice;
         transport.Direct = resultado.Quotes[0].Direct;
         transport.DepartureDate = resultado.Quotes[0].OutboundLeg.DepartureDate;
-        transport.City_Origin = resultado.Places[1].Name;
-        transport.City_Destination = resultado.Places[2].Name;
-        transport.Country_Origin = resultado.Places[1].CountryName;
-        transport.Country_Destination = resultado.Places[2].CountryName;
-        transport.Airline = resultado.Carriers[0].Name
-        transport.LandMarkName_Origin = resultado.Places[1].Name;
-        transport.LandMarkName_Destination = resultado.Places[2].Name;
+        transport.Airline = resultado.Carriers[0].Name;
+
+        if(id_origin>id_destiny){
+            transport.City_Origin = resultado.Places[1].Name;
+            transport.City_Destination = resultado.Places[0].Name;
+            transport.Country_Origin = resultado.Places[1].CountryName;
+            transport.Country_Destination = resultado.Places[0].CountryName;
+            transport.LandMarkName_Origin = resultado.Places[1].Name;
+            transport.LandMarkName_Destination = resultado.Places[0].Name;
+        }
+        else{
+            transport.City_Origin = resultado.Places[0].Name;
+            transport.City_Destination = resultado.Places[1].Name;
+            transport.Country_Origin = resultado.Places[0].CountryName;
+            transport.Country_Destination = resultado.Places[1].CountryName;
+            transport.LandMarkName_Origin = resultado.Places[0].Name;
+            transport.LandMarkName_Destination = resultado.Places[1].Name;
+        }
         return transport;
     }
 
